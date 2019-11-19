@@ -213,6 +213,10 @@ cite {
 	color: #005a7b;
 }
 
+img {
+	max-width: 100%;
+}
+
 
 
 /*===============================================
@@ -657,11 +661,20 @@ dialog[open] {
 	border-radius: 3rem;
 	display: block;
 	padding: 1rem;
+	margin-top: 1rem;
+	margin-left: .5rem;
+	margin-right: .5rem;
+
 }
 
 .article-card {
 	align-items: center;
 	display: flex;
+	padding-right: 1rem;
+}
+
+.article-card h4 {
+	font-size: var(--size-plus-two);
 }
 
 .profile-card {
@@ -681,10 +694,14 @@ dialog[open] {
 	border: 2px solid var(--color-bridge-dark);
 	border-radius: 3rem;
 	display: flex;
+	margin-top: 1rem;
+	margin-left: .5rem;
+	margin-right: .5rem;
 	overflow: hidden;
 	padding-bottom: 1rem;
 	padding-left: 3rem;
 	padding-top: 1rem;
+
 }
 
 .action-info {
@@ -698,6 +715,10 @@ dialog[open] {
 }
 
 @media (min-width: 900px ) {
+
+	.article-card {
+		display: block;
+	}
 
 	.card-grid {
 		background-color: var(--color-river-light);
@@ -713,6 +734,10 @@ dialog[open] {
 	.card-callouts {
 		display: grid;
 		grid-template-columns: repeat( 3, 1fr );
+
+
+
+
 
 	}
 }
