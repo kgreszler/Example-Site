@@ -1,0 +1,747 @@
+/***************************************************
+// Reset
+***************************************************/
+
+/* border-box makes everything easy */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,input,select,textarea,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,footer,header,nav,section,main{
+	box-sizing: border-box;
+}
+
+/* Better behavior for lists */
+ul,ol{
+	list-style-position: outside;
+	margin-left: 1.4rem;
+	padding-left: 0;
+}
+
+/* Keep images and videos from overspilling their bounds */
+img, video{
+	display: block;
+	max-width :100%;
+	height: auto;
+}
+
+/* Make hr just a simple line */
+hr{
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1rem 0;
+	padding: 0;
+}
+
+/* Reduce quirky behavior for tables */
+table{
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Make input text line up with other text */
+input,select{
+	vertical-align: middle;
+}
+
+/* Kill default borders on fieldsets */
+fieldset{
+	border: none;
+}
+
+/* It's rare to want an inline textarea */
+textarea{
+	display: block;
+}
+
+/* Make sub and sup text line up better */
+sub,sup{
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+sup{
+	top: -0.5rem;
+}
+sub{
+	bottom: -0.25rem;
+}
+
+/* A fix for SVG display in old versions of IE. */
+svg:not(:root){
+	overflow: hidden;
+}
+
+/*==============================================
+
+	Colors
+
+===============================================*/
+
+html {
+
+	/* primary colors */
+	--color-sunset:#f2b706;
+	--color-bridge:#da6e00;
+	--color-river:#4087aa;
+
+	/* light colors */
+	--color-sunset-light:#ffe94e;
+	--color-bridge-light:#ff9e3e;
+	--color-river-light:#74b7de;
+
+	/* dark colors */
+	--color-sunset-dark:#ba8800;
+	--color-bridge-dark:#a24100;
+	--color-river-dark:#005a7b;
+
+}
+
+
+/*==============================================
+
+	Typography
+
+===============================================*/
+
+
+
+
+
+html {
+	color: var(--color-bridge);
+	font-family: var(--font-primary);
+	font-size: var(--size-primary);
+	margin: auto;
+
+	/* fonts  */
+	--font-primary:'Open Sans', Helvetica, sans-serif;
+	--font-display:'Abril Fatface', Helvetica, cursive;
+
+	line-height: 1.4;
+
+	--size-ratio: 1.1;
+	--size-primary: calc( 1rem * var(--size-ratio) );
+	--size-plus-one: calc( var(--size-primary) * var(--size-ratio) );
+	--size-plus-two: calc( var(--size-plus-one) * var(--size-ratio) );
+	--size-plus-three: calc( var(--size-plus-two) * var(--size-ratio) );
+	--size-plus-four: calc( var(--size-plus-three) * var(--size-ratio) );
+	--size-plus-five: calc( var(--size-plus-four) * var(--size-ratio) );
+	--size-plus-six: calc( var(--size-plus-five) * var(--size-ratio) );
+	--size-minus-one: calc( var(--size-primary) / var(--size-ratio) );
+
+}
+
+body {
+	margin: 0;
+}
+
+
+@media ( min-width: 640px ) {
+	html {
+		font-size: 20px;
+		line-height: 1.2;
+	}
+
+}
+
+@media ( min-width: 1140px ) {
+	html {
+		font-size: 25px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: var(--font-display);
+}
+
+h1 {
+	color: var(--color-bridge-dark);
+	font-size: var(--size-plus-six);
+	letter-spacing: .2em;
+	text-decoration: underline;
+}
+
+h2 {
+	color: var(--color-bridge-light);
+	font-size: var(--size-plus-five);
+	letter-spacing: .1em;
+	text-decoration: underline;
+
+}
+
+h3 {
+	font-size: var(--size-plus-four);
+	text-decoration: underline;
+}
+
+h4 {
+	color: var(--color-bridge-dark);
+	font-size: var(--size-plus-three);
+	text-decoration: underline;
+}
+
+h5 {
+	color: var(--color-bridge-light);
+	font-size: var(--size-plus-two);
+	text-decoration: underline;
+}
+
+h6 {
+	font-size: var(--size-plus-one);
+	text-decoration: underline;
+}
+
+
+.featured-text {
+	color:#c0c0c0 ;
+	font-size: var(--size-plus-one);
+	margin: 2rem 0 2rem;
+}
+
+
+.tertiary-text {
+	color: #dcdcdc;
+	font-size: var(--size-minus-one);
+	margin: 2rem 0 2rem;
+}
+
+blockquote {
+	color: #74b7de; 
+}
+
+cite {
+	color: #005a7b;
+}
+
+
+
+/*===============================================
+
+	Header Component
+
+=================================================*/
+
+.site-header {
+	background-color: var(--color-river-light);
+	padding: 2rem;
+}
+
+.site-navigation li {
+	display: block;
+}
+
+.site-navigation ul {
+	padding-left: 0;
+}
+
+.logo {
+	color: var(--color-sunset-light);
+	font-family: var(--font-display);
+	font-size: 3rem;
+	text-decoration: none;
+}
+
+
+
+/*===============================================
+
+Page Nav Component
+
+=================================================*/
+nav a {
+	color: var(--color-sunset);
+	
+}
+
+nav a:visited {
+	color: var(--color-sunset-dark);
+	
+}
+
+nav a:hover {
+	color: var(--color-sunset-light);
+	
+}
+
+nav a:active {
+	color: var(--color-bridge-dark);
+}
+
+.current-page {
+	color: var(--color-bridge-dark);
+	background-color: var(--color-sunset-light);
+}
+
+@media ( min-width: 640px ) {
+	.site-navigation li {
+		display: inline-block;
+	}
+}
+
+/*===============================================
+
+	Main Component
+
+=================================================*/
+
+.identity {
+	list-style: none;
+	
+}
+
+main {
+	margin: auto;
+	margin-bottom: 70px;
+	max-width: 40rem;
+	
+}
+
+main a:hover {
+	color: var(--color-sunset-light);
+	
+}
+
+main a:focus {
+	background: var(--color-river-light);
+}
+
+main a:active {
+	color: var(--color-bridge-dark)
+}
+
+/*=============================================
+
+	Buttons
+
+==============================================*/
+
+.hero-button {
+	background-color: var(--color-river-light);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+
+}
+
+.hero-button:hover {
+	background-color: var(--color-river-dark);
+
+}
+
+.hero-button:focus {
+	background-color: var(--color-bridge);
+	outline: none;
+
+}
+
+.hero-button:active {
+	color: var(--color-bridge-light);
+
+}
+
+
+.normal-button {
+	background-color: var(--color-river-dark);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset);
+	padding: .5rem;
+	text-decoration: none;
+
+}
+
+.normal-button:hover {
+	background-color: var(--color-sunset);
+	color: var(--color-river-dark);
+}
+
+.normal-button:focus {
+	background-color: var(--color-sunset-dark);
+	outline: none;
+
+}
+
+.normal-button:active {
+	color: var(--color-sunset);
+}
+
+.tertiary-button {
+	background-color: white;
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.tertiary-button:hover {
+	color: var(--color-sunset-dark);
+}
+
+.tertiary-button:focus {
+	color: var(--color-river-dark);
+	outline: none;
+}
+
+.tertiary-button:active {
+	background-color: var(--color-bridge);
+}
+
+.modal-buttons {
+	padding-left: 12rem;
+	padding-top: 2rem;
+}
+
+.submit-button {
+	background-color: var(--color-river-light);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.submit-button-hover {
+	background-color: var(--color-river-dark);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.submit-button-active {
+	background-color: var(--color-bridge-dark);
+	color: var(--color-bridge);
+	border: 2px solid var(--color-bridge);
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.submit-button-focus {
+	background-color: var(--color-bridge);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	outline: none;
+	padding: .5rem;
+	text-decoration: none;
+}
+
+button {
+	background-color: var(--color-river-light);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.hover-button {
+	background-color: var(--color-river-dark);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.active-button {
+	background-color: var(--color-bridge-dark);
+	color: var(--color-bridge);
+	border: 2px solid var(--color-bridge);
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	padding: .5rem;
+	text-decoration: none;
+}
+
+.focus-button {
+	background-color: var(--color-bridge);
+	border: 2px solid;
+	border-radius: .5rem;
+	color: var(--color-sunset-light);
+	outline: none;
+	padding: .5rem;
+	text-decoration: none;
+}
+
+/*=============================================
+
+	Form Inputs
+
+==============================================*/
+
+input, select, textarea {
+	border: 2px solid;
+	border-radius: .5rem;
+	box-sizing: border-box;
+	display: block;
+	margin-top: .5rem;
+	min-width: 50%;
+	padding: .5rem;
+	-webkit-appearance:none;
+}
+
+textarea {
+	min-height: 4rem;
+}
+
+.help-text {
+	color:#dcdcdc;
+}
+
+input[disabled] {
+	opacity: .5;
+}
+
+textarea[disabled] {
+	opacity: .5;
+}
+
+.focus {
+	border: solid var(--color-sunset-dark);
+}
+
+.error {
+	border: solid red;
+}
+
+.error-message {
+	color: red;
+}
+
+
+
+/*=============================================
+
+	Examples
+
+==============================================*/
+
+.heading-examples {
+	text-decoration: none;
+}
+
+.display-font {
+		font-family: var(--font-display);
+}
+
+.primary-font {
+	font-family: var(--font-primary);
+}
+
+.display {
+	font-family: Arial;
+}
+
+.primary {
+	font-family: Arial;
+}
+
+details {
+	background-color: var(--color-river);
+	border-radius: 2.5rem;
+	color: var(--color-sunset);
+	margin: 2rem 0;
+	overflow: hidden;
+}
+
+summary {
+	background-color: var(--color-river-dark);
+	border-bottom: 4px solid lightblue;
+	padding: 1rem;
+}
+
+details div {
+	padding: 2rem;
+}
+
+dialog {
+	border: none;
+	border-bottom: 10px solid var(--color-bridge-dark);
+	border-top: 10px solid var(--color-bridge-dark);
+	border-radius: 2rem;
+	box-shadow: 7px 7px 7px rgba( 0, 0, 0, .5 );
+	margin: 2rem;
+	padding: 1rem;
+}
+
+dialog[open] {
+	animation: fade-in .2s;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.error-notification {
+	align-items:  center;
+	border-color: red;
+	border-style: solid;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+.warning {
+	align-items: center;
+	border-color: yellow;
+	border-style: solid;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+.neutral {
+	align-items: center;
+	border-color: lightblue;
+	border-style: solid;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+.success {
+	align-items: center;
+	border-color: green;
+	border-style: solid;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+
+/*=============================================
+
+	Hero Block
+
+==============================================*/
+
+.hero {
+	align-items: center;
+	background-image: url(images/bridge.svg);
+	background-position: cover;
+	background-size: cover;
+	color: var(--color-sunset-light);
+	display: flex;
+	flex-direction: column;
+	min-height: 40vh;
+
+}
+
+/*=============================================
+
+	Cards
+
+==============================================*/
+
+.card {
+	border: 2px solid var(--color-bridge-dark);
+	border-radius: 3rem;
+	display: block;
+	padding: 1rem;
+}
+
+.article-card {
+	align-items: center;
+	display: flex;
+}
+
+.profile-card {
+	border: 2px solid var(--color-bridge-dark);
+	border-radius: 3rem;
+	display: flex;
+	overflow: hidden;
+}
+
+.profile-info {
+	display: block;
+	padding-left: 1rem;
+}
+
+.action-card {
+	align-items: center;
+	border: 2px solid var(--color-bridge-dark);
+	border-radius: 3rem;
+	display: flex;
+	overflow: hidden;
+	padding-bottom: 1rem;
+	padding-left: 3rem;
+	padding-top: 1rem;
+}
+
+.action-info {
+	display: block;
+
+}
+
+.card-grid {
+	display: grid;
+	grid-gap: 1rem;
+}
+
+@media (min-width: 900px ) {
+
+	.card-grid {
+		background-color: var(--color-river-light);
+		grid-template-columns: repeat( 2, 1fr );
+
+	}
+
+	.featured-1 {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.card-callouts {
+		display: grid;
+		grid-template-columns: repeat( 3, 1fr );
+
+	}
+}
+
+
+
+/*=============================================
+
+	Footer Component
+
+==============================================*/
+
+.site-footer {
+	background-color: var(--color-river-light);
+	padding: 2rem;
+}
+
+.site-footer li {
+	display: inline;
+}
+
+.site-footer ul {
+	padding-left: 0;
+}
+
+.site-footer p {
+	color: var(--color-bridge);
+}
+
+
+
+
